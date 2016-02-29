@@ -18,6 +18,7 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.assignViewModel(listVM())
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
@@ -42,7 +43,8 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("storyCell", forIndexPath: indexPath) as! storyCell
 
-		cell.setTestText("index is " + String(indexPath.row))
+		//cell.setTestText("index is " + String(indexPath.row))
+		cell.setTestText(viewModel.createStoryAtIndex(indexPath.row).title)
 		
 		return cell
 		

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SWXMLHash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8140C5E4F9CECAE621C1789904E0D70E</key>
+		<key>330E40A27F9CB403E4EC1E46465895E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A7E13E8FC10EBA62E2538AF74033009</key>
+		<key>56628F47596FF67DA393E5040B9B2B7D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B46C78DFBD0D8116B58E9D64CBEC78A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

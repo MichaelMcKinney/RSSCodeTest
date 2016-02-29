@@ -1,10 +1,13 @@
 PODS:
   - SnapKit (0.16.0)
+  - SWXMLHash (2.1.0)
 
 DEPENDENCIES:
   - SnapKit (~> 0.16.0)
+  - SWXMLHash (~> 2.1.0)
 
 SPEC CHECKSUMS:
   SnapKit: ddac6b339d571f9d80dbb733585b172ee9eed3cb
+  SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 
 COCOAPODS: 0.39.0
