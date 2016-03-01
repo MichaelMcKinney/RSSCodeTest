@@ -16,6 +16,7 @@ class listVM: NSObject{
 	
 	let JSON_INFO_URL = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
 	var stories: [story] = []
+	var images: [UIImage] = []
 	
 	//MARK: Initialization
 	override init() {
@@ -54,7 +55,11 @@ class listVM: NSObject{
 	
 	func getImageAtIndex(index: Int) -> UIImage{
 		
-		let tempURL = NSURL(string: stories[index].imageLink!)!
+		if (images.count-1>=index){
+			return images[index]
+		}
+		
+		let tempURL = NSURL(string: "http://" + stories[index].imageLink!)!
 		var imageData = NSData()
 		do{
 			imageData = try NSData(contentsOfURL: tempURL, options:NSDataReadingOptions.DataReadingUncached)
@@ -69,6 +74,7 @@ class listVM: NSObject{
 		}
 		
 		let tempImage =  UIImage(data: imageData)
+		images.insert(tempImage!, atIndex: index)
 		return tempImage!
 	}
 
