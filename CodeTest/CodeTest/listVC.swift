@@ -44,7 +44,9 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 		let cell = tableView.dequeueReusableCellWithIdentifier("storyCell", forIndexPath: indexPath) as! storyCell
 
 		//cell.setTestText("index is " + String(indexPath.row))
-		//cell.setTestText(viewModel.createStoryAtIndex(indexPath.row).title)
+		cell.setTestText(viewModel.getStoryAtIndex(indexPath.row).title!)
+		cell.setPreviewPicture(viewModel.getImageAtIndex(indexPath.row))
+		cell.setSubTitle(viewModel.getStoryAtIndex(indexPath.row).contentSnippet!)
 		
 		return cell
 		
@@ -58,7 +60,7 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		//TODO: GET NUMBER OF STORIES FROM VM
 
-		return 1
+		return viewModel.getNumberOfStories()
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

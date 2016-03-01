@@ -13,6 +13,21 @@ class storyCell: UITableViewCell{
 	
 	
 	@IBOutlet var testLabel: UILabel!
+	@IBOutlet var subText: UILabel!
+	@IBOutlet var previewImage: UIImageView!
+	
+	
+	func setSubTitle(text: String){
+		
+		self.subText.text = text
+	}
+	
+	func setPreviewPicture(picture: UIImage){
+		
+		previewImage.image = picture
+	
+	}
+	
 	
 	func setTestText(text: String){
 		

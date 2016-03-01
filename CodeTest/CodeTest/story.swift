@@ -30,7 +30,16 @@ class story: NSObject, Mappable{
 		publishedDate    <- map["publishedDate"]
 		contentSnippet    <- map["contentSnippet"]
 		content    <- map["content"]
-
+		
+		self.setImage()
+	}
+	
+	func setImage(){
+		let range: Range<String.Index> = self.content!.rangeOfString("<img src=\"")!
+		let range2: Range<String.Index> = self.content!.rangeOfString("\" alt=")!
+		
+		let trueImageString = self.content![range.endIndex.advancedBy(2)...range2.startIndex.predecessor()]
+		self.imageLink = trueImageString
 	}
 }
 

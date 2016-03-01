@@ -17,26 +17,20 @@ class listVM: NSObject{
 	let JSON_INFO_URL = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
 	var stories: [story] = []
 	
+	//MARK: Initialization
 	override init() {
 		super.init()
 		self.getJson()
 		print("Did init listVM")
 	}
 	
-//	func getStoryAtIndex(index: Int) -> story{
-//		
-//		//xml["root"]["h:table"]["h:tr"]["h:td"][0].element!.text!
-//		
-//		//return xmlParser.getStoryAtIndex(index)
-//	}
-	
 	private func getJson(){
 		let JSONString = self.getURLContents()
 		
 		let SW = Mapper<storyWrapper>().map(JSONString)
 		
-		print("did get JSON... maybe")
-		//self.stories = (SW?.responseData?.feed?.entries)!
+		self.stories = (SW?.responseData?.feed?.entries)!
+		print("did get JSON")
 	}
 	
 	private func getURLContents() -> String{
@@ -47,6 +41,31 @@ class listVM: NSObject{
 		catch{print(error)}
 		
 		return json as String
+	}
+	
+	//MARK: Tableview
+	func getNumberOfStories() -> Int{
+		return stories.count
+	}
+	
+	func getStoryAtIndex(index: Int) -> story{
+		return stories[index]
+	}
+	
+	func getImageAtIndex(index: Int) -> UIImage{
+		
+		let tempURL = NSURL(string: stories[index].imageLink!)!
+		let imageData = NSData(contentsOfURL: tempURL)
+		if (imageData == nil){
+			
+			UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), false, 0.0)
+			let blank = UIGraphicsGetImageFromCurrentImageContext()
+			UIGraphicsEndImageContext()
+			
+			return blank
+		}
+		let tempImage =  UIImage(data: imageData!)!
+		return tempImage
 	}
 
 	
