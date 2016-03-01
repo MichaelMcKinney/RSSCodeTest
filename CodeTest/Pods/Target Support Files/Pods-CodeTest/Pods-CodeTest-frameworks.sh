@@ -84,14 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-CodeTest/Argo.framework"
-  install_framework "Pods-CodeTest/Curry.framework"
   install_framework "Pods-CodeTest/ObjectMapper.framework"
   install_framework "Pods-CodeTest/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-CodeTest/Argo.framework"
-  install_framework "Pods-CodeTest/Curry.framework"
   install_framework "Pods-CodeTest/ObjectMapper.framework"
   install_framework "Pods-CodeTest/SnapKit.framework"
 fi

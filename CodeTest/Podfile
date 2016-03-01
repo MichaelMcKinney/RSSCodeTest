@@ -5,8 +5,6 @@ use_frameworks!
 
 target 'CodeTest' do
 pod 'SnapKit', '~> 0.16.0'
-pod 'Argo', '~> 2.2.0'
-pod 'Curry', '~> 1.4.0'
 pod 'ObjectMapper', '~> 1.1'
 end
 

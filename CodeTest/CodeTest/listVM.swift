@@ -15,10 +15,11 @@ import ObjectMapper
 class listVM: NSObject{
 	
 	let JSON_INFO_URL = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
+	var stories: [story] = []
 	
 	override init() {
-		print("Did call listVM setup")
-		
+		super.init()
+		self.getJson()
 		print("Did init listVM")
 	}
 	
@@ -29,11 +30,11 @@ class listVM: NSObject{
 //		//return xmlParser.getStoryAtIndex(index)
 //	}
 	
-	private func getJsonString(){
+	private func getJson(){
 		let JSONString = self.getURLContents()
 		
 		let SW = Mapper<storyWrapper>().map(JSONString)
-		
+		self.stories = (SW?.responseData?.feed?.entries)!
 	}
 	
 	private func getURLContents() -> String{

@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Argo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Curry.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +22,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28E618D9359494C1A68D1922E59D48BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D2CA4FA10B4B3D9CB5716ED97968717</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6B9AFFC47F6726A286AC60881069C919</key>
+		<key>9AE5FEF010830A84016E678818515F0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F99AB5D19F8C1EB0CD50BE11730A805C</key>
+		<key>D444255AA4326773886DF4AD87FC088B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

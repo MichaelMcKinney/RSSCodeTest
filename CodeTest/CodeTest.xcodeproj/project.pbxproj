@@ -16,9 +16,7 @@
 		271443BB1C849E800040AC42 /* CodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443BA1C849E800040AC42 /* CodeTestUITests.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
 		2725B6E41C852699006067AB /* storyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* storyWrapper.swift */; };
-		2725B6E81C853F31006067AB /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E51C853F31006067AB /* Argo.framework */; };
-		2725B6E91C853F31006067AB /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E61C853F31006067AB /* Curry.framework */; };
-		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; };
+		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		273E950A1C84A1D70087F448 /* listVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E95091C84A1D70087F448 /* listVM.swift */; };
 		273E950C1C84A3230087F448 /* storyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950B1C84A3230087F448 /* storyCell.swift */; };
 		273E950E1C84AB830087F448 /* storyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950D1C84AB830087F448 /* storyParser.swift */; };
@@ -74,8 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2725B6E81C853F31006067AB /* Argo.framework in Frameworks */,
-				2725B6E91C853F31006067AB /* Curry.framework in Frameworks */,
 				2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */,
 				A37DE6C1DF1EAE836CB7FF5D /* Pods_CodeTest.framework in Frameworks */,
 			);
