@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8A98AB0FB65F197E7C37AA47'
-               BlueprintName = 'Argo'
+               BlueprintIdentifier = '22256BC9A8D2C5CEB5D1BF7D'
+               BlueprintName = 'ObjectMapper'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Argo.framework'>
+               BuildableName = 'ObjectMapper.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

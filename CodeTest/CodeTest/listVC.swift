@@ -44,7 +44,7 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 		let cell = tableView.dequeueReusableCellWithIdentifier("storyCell", forIndexPath: indexPath) as! storyCell
 
 		//cell.setTestText("index is " + String(indexPath.row))
-		cell.setTestText(viewModel.createStoryAtIndex(indexPath.row).title)
+		//cell.setTestText(viewModel.createStoryAtIndex(indexPath.row).title)
 		
 		return cell
 		

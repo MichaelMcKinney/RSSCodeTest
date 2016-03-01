@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Argo
-import Curry
+import ObjectMapper
 
 
 //View Model for List View Controller
@@ -23,32 +22,28 @@ class listVM: NSObject{
 		print("Did init listVM")
 	}
 	
-	func createStoryAtIndex(index: Int) -> story{
-		
-		//xml["root"]["h:table"]["h:tr"]["h:td"][0].element!.text!
-		
-		//return xmlParser.getStoryAtIndex(index)
-	}
+//	func getStoryAtIndex(index: Int) -> story{
+//		
+//		//xml["root"]["h:table"]["h:tr"]["h:td"][0].element!.text!
+//		
+//		//return xmlParser.getStoryAtIndex(index)
+//	}
 	
 	private func getJsonString(){
-		let data: NSData = self.getURLContents()
-		let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+		let JSONString = self.getURLContents()
 		
-		if let j: AnyObject = json {
-			let SW: storyWrapper? = decode(j)                  // ignore failure info or
-			let decodedUser: Decoded<storyWrapper> = decode(j)   // preserve failure info
-		}
-		
+		let SW = Mapper<storyWrapper>().map(JSONString)
 		
 	}
 	
-	private func getURLContents() -> NSData{
-		var data: NSData
+	private func getURLContents() -> String{
+		var json: NSString = ""
 		do {
-			data = NSData(contentsOfURL: NSURL(string: JSON_INFO_URL)!)!
+			json = try NSString(contentsOfURL: NSURL(string: JSON_INFO_URL)!, encoding: NSUTF8StringEncoding)
 		}
+		catch{print(error)}
 		
-		return data
+		return json as String
 	}
 
 	

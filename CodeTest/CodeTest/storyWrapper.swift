@@ -7,47 +7,49 @@
 //
 
 import Foundation
-import Curry
-import Argo
+import ObjectMapper
 
-struct storyWrapper{
+class storyWrapper: NSObject, Mappable{
 	
-	let responseData: Response
+	var responseData: Response?
+	
+	required init?(_ map: Map) {
+		
+	}
+
+	// Mappable
+	func mapping(map: Map) {
+		responseData    <- map["responseDate"]
+	}
 }
 
-extension storyWrapper: Decodable {
+
+class Response: NSObject, Mappable{
 	
-	static func decode(j: JSON) -> Decoded<storyWrapper> {
-		return curry(storyWrapper.init)
-			<^> j <| "responseData" // parse feed object out
+	var feed: Feed?
+	
+	required init?(_ map: Map) {
+		
 	}
 	
+	// Mappable
+	func mapping(map: Map) {
+		feed    <- map["feed"]
+	}
 }
 
-struct Response{
-	
-	let feed: Feed
-}
 
-extension Response: Decodable {
+class Feed: NSObject, Mappable{
 	
-	static func decode(j: JSON) -> Decoded<Response> {
-		return curry(Response.init)
-			<^> j <| "feed" // Custom types that also conform to Decodable just work
+	var entries: [story]?
+	
+	required init?(_ map: Map) {
+		
 	}
 	
-}
-
-struct Feed{
-	
-	let entries: [story]
-}
-
-extension Feed: Decodable {
-
-	static func decode(j: JSON) -> Decoded<Feed> {
-		return curry(Feed.init)
-			<^> j <|| "entries" // parse arrays of objects
+	// Mappable
+	func mapping(map: Map) {
+		entries    <- map["entries"]
 	}
 }
 

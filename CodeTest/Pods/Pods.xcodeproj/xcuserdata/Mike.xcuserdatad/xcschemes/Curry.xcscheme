@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EF4E7BE84FD256BD3C0CC34A'
+               BlueprintIdentifier = '115A66F085774CD68CD3A8C2'
                BlueprintName = 'Curry'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Curry.framework'>
