@@ -25,12 +25,11 @@ class storyCardView: UIView{
 	func setSubTitle(text: String){
 		
 		self.subText.text = text
+		self.subText.numberOfLines = 0
 	}
 	
 	func setPreviewPicture(picture: UIImage){
 		
-		gradientImage.hidden = true
-		//TODO: set Gradient image to something real
 		storyImage.image = picture
 		
 	}
@@ -39,6 +38,12 @@ class storyCardView: UIView{
 	func setMainText(text: String){
 		
 		self.titleText.text = text
+		self.titleText.numberOfLines = 0
+		
+	}
+	
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		//if (UIEvent.)
 	}
 	
 }
