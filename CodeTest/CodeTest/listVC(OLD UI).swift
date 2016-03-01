@@ -66,7 +66,7 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
 		//cell.setTestText("index is " + String(indexPath.row))
 		cell.setTestText(viewModel!.getStoryAtIndex(indexPath.row).title!)
-		cell.setPreviewPicture(viewModel!.getImageAtIndex(indexPath.row))
+		cell.setPreviewPicture(viewModel!.getImageAtIndex(indexPath.row, indicatorStart: (), indicatorStop: ()))
 		cell.setSubTitle(viewModel!.getStoryAtIndex(indexPath.row).contentSnippet!)
 		
 		return cell

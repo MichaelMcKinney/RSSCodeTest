@@ -16,6 +16,9 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	@IBOutlet var indexLabel: UILabel!
 	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
+	@IBOutlet var infoView: UIView!
+	@IBOutlet var infoButton: UIButton!
+	
 	var viewModel: listVM?
 	var selectedIndex = 0
 	
@@ -26,9 +29,12 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		infoView.hidden=true
 		self.assignViewModel(listVM())
 		setupTouchRecognizer()
+		setupInfoRecognizer()
 		setupRefreshButton()
+		setupInfoButton()
 		updateLabel()
 		activityIndicator.stopAnimating()
 		
@@ -68,6 +74,14 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	
 	private func setupRefreshButton(){
 		refreshButton.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.TouchUpInside)
+	}
+	
+	private func setupInfoButton(){
+		infoButton.addTarget(self, action: "toggleInfo", forControlEvents: UIControlEvents.TouchUpInside)
+	}
+	
+	func toggleInfo(){
+		infoView.hidden = !infoView.hidden
 	}
 	
 	private func updateLabel(){
@@ -168,7 +182,7 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 			newPageView.setMainText(viewModel!.getStoryAtIndex(index).title!)
 			newPageView.setSubTitle(viewModel!.getStoryAtIndex(index).contentSnippet!)
 			
-			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index))
+			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index, indicatorStart: activityIndicator.startAnimating(), indicatorStop: activityIndicator.stopAnimating()))
 			
 			newPageView.contentMode = .ScaleAspectFit
 			newPageView.frame = frame
@@ -223,6 +237,15 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	}
 	
 //MARK: Segues
+	
+	func setupInfoRecognizer(){
+		let singleTapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "toggleInfo")
+		singleTapGestureRecognizer.numberOfTapsRequired = 1;
+		singleTapGestureRecognizer.enabled = true;
+		singleTapGestureRecognizer.cancelsTouchesInView = false;
+		infoView.addGestureRecognizer(singleTapGestureRecognizer)
+	}
+	
 	func setupTouchRecognizer(){
 		let singleTapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "singleTap")
 		singleTapGestureRecognizer.numberOfTapsRequired = 1;

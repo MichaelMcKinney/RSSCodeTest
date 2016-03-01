@@ -146,6 +146,50 @@
                                 <rect key="frame" x="169" y="41" width="37" height="37"/>
                                 <color key="color" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZg-td-9IY">
+                                <rect key="frame" x="304" y="605" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HUI-iX-VoF"/>
+                                    <constraint firstAttribute="width" constant="30" id="pz8-rz-MRf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Very-Basic-Info-icon.png"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUH-NS-t7Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Google News reader App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBO-S7-JT1">
+                                        <rect key="frame" x="29" y="226" width="316" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxX-QO-OD2">
+                                        <rect key="frame" x="147" y="175" width="80" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe left or right to change stories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-TA-HOP">
+                                        <rect key="frame" x="51" y="255" width="273" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on a story to expand it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-ft-LgR">
+                                        <rect key="frame" x="86" y="284" width="203" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch anywhere to exit this screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-I3-hQT">
+                                        <rect key="frame" x="67" y="337" width="240" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.89867714723926384" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,8 +198,10 @@
                             <constraint firstItem="zdd-kq-MsN" firstAttribute="centerX" secondItem="rYj-nA-AJx" secondAttribute="centerX" id="6yJ-PV-jkN"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="leading" secondItem="rYj-nA-AJx" secondAttribute="leading" id="8wR-Tn-z2B"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="top" secondItem="k4b-R9-O8v" secondAttribute="bottom" constant="66" id="EM0-ov-brf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kZg-td-9IY" secondAttribute="trailing" constant="25" id="IWq-qL-1aA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FRz-Iu-Fvd" secondAttribute="leading" id="JcY-UG-TzT"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="bottom" secondItem="3co-jZ-dqE" secondAttribute="top" constant="-142" id="NGE-yo-fyR"/>
+                            <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="kZg-td-9IY" secondAttribute="bottom" constant="32" id="cx0-xJ-slU"/>
                             <constraint firstItem="2dW-Iw-EqL" firstAttribute="centerX" secondItem="rYj-nA-AJx" secondAttribute="centerX" constant="-1.5" id="fv2-de-WGD"/>
                             <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="FRz-Iu-Fvd" secondAttribute="bottom" constant="20" id="gla-iw-zcv"/>
                             <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="2dW-Iw-EqL" secondAttribute="bottom" constant="29" id="ksG-bm-tlN"/>
@@ -165,6 +211,8 @@
                     <connections>
                         <outlet property="activityIndicator" destination="zdd-kq-MsN" id="LXh-El-8bm"/>
                         <outlet property="indexLabel" destination="2dW-Iw-EqL" id="FTg-uC-nsS"/>
+                        <outlet property="infoButton" destination="kZg-td-9IY" id="sMU-IR-J87"/>
+                        <outlet property="infoView" destination="XUH-NS-t7Q" id="K1k-IP-U1U"/>
                         <outlet property="refreshButton" destination="FRz-Iu-Fvd" id="vgE-cC-MUd"/>
                         <outlet property="scrollView" destination="sUT-m0-ew3" id="ZMP-GO-YXZ"/>
                         <segue destination="daB-bt-4JU" kind="modal" identifier="showStory" modalTransitionStyle="coverVertical" id="53Z-ZN-hpa"/>
@@ -244,6 +292,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Very-Basic-Info-icon.png" width="256" height="256"/>
         <image name="refresh_icon.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
