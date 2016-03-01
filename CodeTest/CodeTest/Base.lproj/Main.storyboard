@@ -3,23 +3,93 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--StoryVC-->
         <scene sceneID="3MU-Iq-vdk">
             <objects>
-                <viewController id="daB-bt-4JU" sceneMemberID="viewController">
+                <viewController id="daB-bt-4JU" customClass="storyVC" customModule="CodeTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g9w-Qd-Wqg"/>
                         <viewControllerLayoutGuide type="bottom" id="SdT-2x-5xL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Hc-vx-iNG">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uj0-71-niS">
+                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="daB-bt-4JU" id="A9Z-py-qab"/>
+                                </connections>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yx0-qB-6bD">
+                                <rect key="frame" x="-4" y="20" width="61" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FfI-CV-trF">
+                                        <rect key="frame" x="8" y="8" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="VMh-ak-VRb"/>
+                                            <constraint firstAttribute="width" constant="45" id="e0S-h4-MOI"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="X">
+                                                    <attributes>
+                                                        <font key="NSFont" size="35" name="HelveticaNeue-Thin"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="0.80638899539877296" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="5LC-Kp-c0J"/>
+                                    <constraint firstItem="FfI-CV-trF" firstAttribute="leading" secondItem="Yx0-qB-6bD" secondAttribute="leading" constant="8" id="GzQ-F8-rQH"/>
+                                    <constraint firstItem="FfI-CV-trF" firstAttribute="top" secondItem="Yx0-qB-6bD" secondAttribute="top" constant="8" id="ONY-bB-Gcx"/>
+                                    <constraint firstAttribute="width" constant="61" id="uil-ct-mpv"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-XC-BKf">
+                                <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4GY-X6-KGE"/>
+                                    <constraint firstAttribute="height" constant="50" id="7rb-Vf-q5o"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R7e-XC-BKf" firstAttribute="centerY" secondItem="0Hc-vx-iNG" secondAttribute="centerY" id="AJZ-sB-ZFZ"/>
+                            <constraint firstItem="R7e-XC-BKf" firstAttribute="centerX" secondItem="0Hc-vx-iNG" secondAttribute="centerX" id="Aoj-hX-Nj3"/>
+                            <constraint firstItem="Yx0-qB-6bD" firstAttribute="leading" secondItem="0Hc-vx-iNG" secondAttribute="leadingMargin" constant="-20" id="BdR-tw-CXZ"/>
+                            <constraint firstItem="R7e-XC-BKf" firstAttribute="top" secondItem="g9w-Qd-Wqg" secondAttribute="bottom" constant="299" id="EII-8w-K0B"/>
+                            <constraint firstItem="uj0-71-niS" firstAttribute="leading" secondItem="0Hc-vx-iNG" secondAttribute="leadingMargin" constant="-20" id="Mip-Fj-GZw"/>
+                            <constraint firstItem="Yx0-qB-6bD" firstAttribute="top" secondItem="g9w-Qd-Wqg" secondAttribute="bottom" id="My9-cR-bdA"/>
+                            <constraint firstItem="uj0-71-niS" firstAttribute="top" secondItem="g9w-Qd-Wqg" secondAttribute="bottom" id="aPQ-cx-KlV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uj0-71-niS" secondAttribute="trailing" constant="-20" id="aSW-bp-Aet"/>
+                            <constraint firstItem="R7e-XC-BKf" firstAttribute="leading" secondItem="0Hc-vx-iNG" secondAttribute="leadingMargin" constant="142" id="fxp-We-Q6a"/>
+                            <constraint firstItem="SdT-2x-5xL" firstAttribute="top" secondItem="uj0-71-niS" secondAttribute="bottom" id="hLB-e8-SWc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EII-8w-K0B"/>
+                                <exclude reference="fxp-We-Q6a"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="R7e-XC-BKf" id="gfq-4S-xax"/>
+                        <outlet property="webView" destination="uj0-71-niS" id="sFU-A2-R7W"/>
+                        <outlet property="xButton" destination="FfI-CV-trF" id="Wpo-qk-DlA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpu-sg-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,9 +98,10 @@
         <!--Navigation Controller-->
         <scene sceneID="QiF-LM-OvQ">
             <objects>
-                <navigationController id="nHL-yt-WbP" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="nHL-yt-WbP" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3IX-Xv-Uxb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3IX-Xv-Uxb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -51,7 +122,7 @@
                         <viewControllerLayoutGuide type="bottom" id="heH-vA-B1N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r9z-dU-mkp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sAr-KI-3mg">
@@ -99,11 +170,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y4z-mh-kZC"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="sAr-KI-3mg" id="m4B-ba-z9v"/>
-                        <segue destination="daB-bt-4JU" kind="show" identifier="showStory" id="lDP-nD-aOh"/>
+                        <segue destination="daB-bt-4JU" kind="presentation" identifier="showStory" modalTransitionStyle="coverVertical" id="lDP-nD-aOh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtX-3P-EMg" userLabel="First Responder" sceneMemberID="firstResponder"/>

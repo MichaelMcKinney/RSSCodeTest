@@ -14,6 +14,9 @@
 		271443A51C849E800040AC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271443A31C849E800040AC42 /* LaunchScreen.storyboard */; };
 		271443B01C849E800040AC42 /* CodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443AF1C849E800040AC42 /* CodeTestTests.swift */; };
 		271443BB1C849E800040AC42 /* CodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443BA1C849E800040AC42 /* CodeTestUITests.swift */; };
+		271F80581C85D7FD005E5333 /* storyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80571C85D7FD005E5333 /* storyVC.swift */; };
+		271F805A1C85D809005E5333 /* storyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80591C85D809005E5333 /* storyVM.swift */; };
+		271F805C1C85E81B005E5333 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F805B1C85E81B005E5333 /* Reachability.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
 		2725B6E41C852699006067AB /* storyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* storyWrapper.swift */; };
 		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -54,6 +57,9 @@
 		271443B61C849E800040AC42 /* CodeTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271443BA1C849E800040AC42 /* CodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestUITests.swift; sourceTree = "<group>"; };
 		271443BC1C849E800040AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271F80571C85D7FD005E5333 /* storyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyVC.swift; sourceTree = "<group>"; };
+		271F80591C85D809005E5333 /* storyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyVM.swift; sourceTree = "<group>"; };
+		271F805B1C85E81B005E5333 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2725B6E11C84CFC5006067AB /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
 		2725B6E31C852699006067AB /* storyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyWrapper.swift; sourceTree = "<group>"; };
 		2725B6E51C853F31006067AB /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Pods/../build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 				273E950D1C84AB830087F448 /* storyParser.swift */,
 				2725B6E31C852699006067AB /* storyWrapper.swift */,
 				2725B6E11C84CFC5006067AB /* story.swift */,
+				271F805B1C85E81B005E5333 /* Reachability.swift */,
+				271F80561C85D7ED005E5333 /* storyVC */,
 				273E95081C84A1B70087F448 /* listVC */,
 				2714439E1C849E800040AC42 /* Main.storyboard */,
 				271443A11C849E800040AC42 /* Assets.xcassets */,
@@ -148,6 +156,15 @@
 				271443BC1C849E800040AC42 /* Info.plist */,
 			);
 			path = CodeTestUITests;
+			sourceTree = "<group>";
+		};
+		271F80561C85D7ED005E5333 /* storyVC */ = {
+			isa = PBXGroup;
+			children = (
+				271F80571C85D7FD005E5333 /* storyVC.swift */,
+				271F80591C85D809005E5333 /* storyVM.swift */,
+			);
+			name = storyVC;
 			sourceTree = "<group>";
 		};
 		273E95081C84A1B70087F448 /* listVC */ = {
@@ -364,10 +381,13 @@
 			files = (
 				2714439D1C849E800040AC42 /* listVC.swift in Sources */,
 				273E950E1C84AB830087F448 /* storyParser.swift in Sources */,
+				271F80581C85D7FD005E5333 /* storyVC.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,
 				2725B6E21C84CFC5006067AB /* story.swift in Sources */,
+				271F805A1C85D809005E5333 /* storyVM.swift in Sources */,
 				2725B6E41C852699006067AB /* storyWrapper.swift in Sources */,
 				2714439B1C849E800040AC42 /* AppDelegate.swift in Sources */,
+				271F805C1C85E81B005E5333 /* Reachability.swift in Sources */,
 				273E950C1C84A3230087F448 /* storyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

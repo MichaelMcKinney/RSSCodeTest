@@ -18,6 +18,8 @@ class listVM: NSObject{
 	var stories: [story] = []
 	var images: [UIImage] = []
 	
+	var isConnected = true
+	
 	//MARK: Initialization
 	override init() {
 		super.init()
@@ -28,6 +30,10 @@ class listVM: NSObject{
 	private func getJson(){
 		let JSONString = self.getURLContents()
 		
+		if (JSONString.characters.count == 0){ //NO STORIES LOADED
+			return
+		}
+		
 		let SW = Mapper<storyWrapper>().map(JSONString)
 		
 		self.stories = (SW?.responseData?.feed?.entries)!
@@ -36,12 +42,33 @@ class listVM: NSObject{
 	
 	private func getURLContents() -> String{
 		var json: NSString = ""
-		do {
-			json = try NSString(contentsOfURL: NSURL(string: JSON_INFO_URL)!, encoding: NSUTF8StringEncoding)
+		let prefs = NSUserDefaults.standardUserDefaults()
+		
+		if (Reachability.isConnectedToNetwork()){
+			print("Connected to Network")
+			isConnected = true
+			do {
+				json = try NSString(contentsOfURL: NSURL(string: JSON_INFO_URL)!, encoding: NSUTF8StringEncoding)
+			}
+			catch{print(error)}
+			
+			prefs.setValue(json, forKey: "lastJSON")
 		}
-		catch{print(error)}
+		else{
+			print("NOT Connected to Network")
+			isConnected = false
+			if let tempString = prefs.stringForKey("lastJSON"){
+				json = tempString
+			}
+		}
 		
 		return json as String
+	}
+	
+	//MARK: Refresh Data
+	func refreshData(completion:Void){
+		getJson()
+		completion
 	}
 	
 	//MARK: Tableview
@@ -76,6 +103,10 @@ class listVM: NSObject{
 		let tempImage =  UIImage(data: imageData)
 		images.insert(tempImage!, atIndex: index)
 		return tempImage!
+	}
+	
+	func getURLAtIndex(index: Int) ->NSURL{
+		return NSURL(string:self.getStoryAtIndex(index).link!)!
 	}
 
 	
