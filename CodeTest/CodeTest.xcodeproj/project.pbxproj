@@ -17,6 +17,10 @@
 		271F80581C85D7FD005E5333 /* storyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80571C85D7FD005E5333 /* storyVC.swift */; };
 		271F805A1C85D809005E5333 /* storyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80591C85D809005E5333 /* storyVM.swift */; };
 		271F805C1C85E81B005E5333 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F805B1C85E81B005E5333 /* Reachability.swift */; };
+		271F805E1C85F9BC005E5333 /* refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 271F805D1C85F9BC005E5333 /* refresh_icon.png */; };
+		271F80601C85FADD005E5333 /* scrollListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F805F1C85FADD005E5333 /* scrollListVC.swift */; };
+		271F80621C85FDA2005E5333 /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271F80611C85FDA2005E5333 /* cardView.xib */; };
+		271F80641C85FEC7005E5333 /* storyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80631C85FEC7005E5333 /* storyCardView.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
 		2725B6E41C852699006067AB /* storyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* storyWrapper.swift */; };
 		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -60,6 +64,10 @@
 		271F80571C85D7FD005E5333 /* storyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyVC.swift; sourceTree = "<group>"; };
 		271F80591C85D809005E5333 /* storyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyVM.swift; sourceTree = "<group>"; };
 		271F805B1C85E81B005E5333 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		271F805D1C85F9BC005E5333 /* refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh_icon.png; path = images/refresh_icon.png; sourceTree = SOURCE_ROOT; };
+		271F805F1C85FADD005E5333 /* scrollListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollListVC.swift; sourceTree = "<group>"; };
+		271F80611C85FDA2005E5333 /* cardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cardView.xib; sourceTree = "<group>"; };
+		271F80631C85FEC7005E5333 /* storyCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyCardView.swift; sourceTree = "<group>"; };
 		2725B6E11C84CFC5006067AB /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
 		2725B6E31C852699006067AB /* storyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyWrapper.swift; sourceTree = "<group>"; };
 		2725B6E51C853F31006067AB /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Pods/../build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
@@ -133,6 +141,8 @@
 				271F80561C85D7ED005E5333 /* storyVC */,
 				273E95081C84A1B70087F448 /* listVC */,
 				2714439E1C849E800040AC42 /* Main.storyboard */,
+				271F80611C85FDA2005E5333 /* cardView.xib */,
+				271F805D1C85F9BC005E5333 /* refresh_icon.png */,
 				271443A11C849E800040AC42 /* Assets.xcassets */,
 				271443A31C849E800040AC42 /* LaunchScreen.storyboard */,
 				271443A61C849E800040AC42 /* Info.plist */,
@@ -173,6 +183,8 @@
 				2714439C1C849E800040AC42 /* listVC.swift */,
 				273E95091C84A1D70087F448 /* listVM.swift */,
 				273E950B1C84A3230087F448 /* storyCell.swift */,
+				271F80631C85FEC7005E5333 /* storyCardView.swift */,
+				271F805F1C85FADD005E5333 /* scrollListVC.swift */,
 			);
 			name = listVC;
 			sourceTree = "<group>";
@@ -306,6 +318,8 @@
 			files = (
 				271443A51C849E800040AC42 /* LaunchScreen.storyboard in Resources */,
 				271443A21C849E800040AC42 /* Assets.xcassets in Resources */,
+				271F805E1C85F9BC005E5333 /* refresh_icon.png in Resources */,
+				271F80621C85FDA2005E5333 /* cardView.xib in Resources */,
 				271443A01C849E800040AC42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,8 +398,10 @@
 				271F80581C85D7FD005E5333 /* storyVC.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,
 				2725B6E21C84CFC5006067AB /* story.swift in Sources */,
+				271F80601C85FADD005E5333 /* scrollListVC.swift in Sources */,
 				271F805A1C85D809005E5333 /* storyVM.swift in Sources */,
 				2725B6E41C852699006067AB /* storyWrapper.swift in Sources */,
+				271F80641C85FEC7005E5333 /* storyCardView.swift in Sources */,
 				2714439B1C849E800040AC42 /* AppDelegate.swift in Sources */,
 				271F805C1C85E81B005E5333 /* Reachability.swift in Sources */,
 				273E950C1C84A3230087F448 /* storyCell.swift in Sources */,
