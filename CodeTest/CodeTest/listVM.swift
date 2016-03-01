@@ -55,17 +55,21 @@ class listVM: NSObject{
 	func getImageAtIndex(index: Int) -> UIImage{
 		
 		let tempURL = NSURL(string: stories[index].imageLink!)!
-		let imageData = NSData(contentsOfURL: tempURL)
-		if (imageData == nil){
-			
+		var imageData = NSData()
+		do{
+			imageData = try NSData(contentsOfURL: tempURL, options:NSDataReadingOptions.DataReadingUncached)
+		}
+		catch{
+			print(error)
 			UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), false, 0.0)
 			let blank = UIGraphicsGetImageFromCurrentImageContext()
 			UIGraphicsEndImageContext()
 			
 			return blank
 		}
-		let tempImage =  UIImage(data: imageData!)!
-		return tempImage
+		
+		let tempImage =  UIImage(data: imageData)
+		return tempImage!
 	}
 
 	
