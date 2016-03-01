@@ -96,8 +96,8 @@ class listVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 		if (segue.identifier == "showStory"){
 			
 			let nextStoryVC = segue.destinationViewController as! storyVC
-			let url = viewModel!.getURLAtIndex(selectedIndex)
-			nextStoryVC.assignViewModel(storyVM(url: url))
+			let url = viewModel!.getLinkAtIndex(selectedIndex)
+			nextStoryVC.assignViewModel(storyVM(url: url,isOff: false))
 			
 		}
 	}

@@ -14,6 +14,7 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	@IBOutlet var scrollView: UIScrollView!
 	@IBOutlet var refreshButton: UIButton!
 	@IBOutlet var indexLabel: UILabel!
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	var viewModel: listVM?
 	var selectedIndex = 0
@@ -29,6 +30,7 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		setupTouchRecognizer()
 		setupRefreshButton()
 		updateLabel()
+		activityIndicator.stopAnimating()
 		
 		var i = 0
 		while(i<viewModel!.getNumberOfStories()){
@@ -96,20 +98,22 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		}
 		
 		print("DID REFRESH")
-		
-		viewModel?.refreshData(purgeAllCells())
+		viewModel?.refreshData(activityIndicator.stopAnimating())
 	}
 	
 //MARK: ScrollView Pages
 	
-	func purgeAllCells(){
-		var i = 0
-		while(i<viewModel!.getNumberOfStories()){
-			pageViews.append(nil)
-			i++
-		}
-		loadVisiblePages()
-	}
+//	func purgeAllCells(){
+//		//self.viewDidLoad()
+//		self.view.setNeedsDisplay()
+////		var i = 0
+////		while(i<viewModel!.getNumberOfStories()){
+////			pageViews.append(nil)
+////			i++
+////		}
+////		loadView()
+////		loadVisiblePages()
+//	}
 	
 	func loadVisiblePages() {
 		
@@ -157,16 +161,32 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 			frame.origin.y = 0.0
 			frame = CGRectInset(frame, 15.0, 0.0)
  
+			activityIndicator.startAnimating()
 			let newPageView = storyCardView.instanceFromNib() as! storyCardView
 			
 			
 			newPageView.setMainText(viewModel!.getStoryAtIndex(index).title!)
 			newPageView.setSubTitle(viewModel!.getStoryAtIndex(index).contentSnippet!)
+			
 			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index))
 			
 			newPageView.contentMode = .ScaleAspectFit
 			newPageView.frame = frame
+			
+			newPageView.layer.cornerRadius = 8
+			newPageView.layer.borderWidth = 1
+			newPageView.layer.borderColor = UIColor.blackColor().CGColor
+			newPageView.clipsToBounds = true
+			
+			newPageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
+			newPageView.layer.shadowOffset = CGSizeMake(-0.2, -0.2)
+			newPageView.layer.shadowRadius = 1
+			newPageView.layer.shadowPath = UIBezierPath(rect: newPageView.bounds).CGPath
+			newPageView.layer.shadowOpacity = 0.2
+
 			scrollView.addSubview(newPageView)
+			activityIndicator.stopAnimating()
+			
 			pageViews[index] = newPageView
 			print("MADE NEW CELL")
 		}
@@ -188,8 +208,18 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 //MARK: ScrollView Functionality
 	
 	func scrollViewDidScroll(scrollView: UIScrollView) {
+		activityIndicator.startAnimating()
 		loadVisiblePages()
 		updateLabel()
+		activityIndicator.stopAnimating()
+	}
+	
+	func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+		activityIndicator.stopAnimating()
+	}
+	
+	func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+		activityIndicator.startAnimating()
 	}
 	
 //MARK: Segues
@@ -206,13 +236,6 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		let index = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
 		
 		self.selectedIndex = index
-		
-		if (!Reachability.isConnectedToNetwork()){
-			showOfflineIndicator()
-			//TODO: Make offline page of abstract and title, pass that as next URL
-			return
-		}
-		
 		self.performSegueWithIdentifier("showStory", sender: self)
 	}
 	
@@ -220,8 +243,24 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		if (segue.identifier == "showStory"){
 			
 			let nextStoryVC = segue.destinationViewController as! storyVC
-			let url = viewModel!.getURLAtIndex(selectedIndex)
-			nextStoryVC.assignViewModel(storyVM(url: url))
+			var urlString: String = ""
+			if (!Reachability.isConnectedToNetwork()){
+				//showOfflineIndicator()
+				let tempStory = viewModel?.getStoryAtIndex(selectedIndex)
+				var constructionString = "<t>" + "\n" + "\n" + "\n"
+				constructionString.appendContentsOf("\n" + (tempStory?.title)!+"</t> \n")
+				constructionString.appendContentsOf("<p>" + (tempStory?.contentSnippet)! + "</p>")
+				
+				urlString = constructionString
+				nextStoryVC.assignViewModel(storyVM(url: urlString, isOff: true))
+
+			}
+			else{
+				urlString = viewModel!.getLinkAtIndex(selectedIndex)
+				nextStoryVC.assignViewModel(storyVM(url: urlString, isOff: false))
+			}
+			
+
 			
 		}
 

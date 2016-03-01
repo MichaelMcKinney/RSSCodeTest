@@ -10,10 +10,13 @@ import Foundation
 
 class storyVM: NSObject{
 	
-	let URL: NSURL
+	let URL: String
+	let isOffline: Bool
 	
-	required init(url:NSURL){
+	required init(url:String, isOff: Bool){
 		self.URL = url
+		isOffline = isOff
 	}
+
 	
 }

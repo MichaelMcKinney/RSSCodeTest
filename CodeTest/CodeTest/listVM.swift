@@ -82,12 +82,15 @@ class listVM: NSObject{
 	
 	func getImageAtIndex(index: Int) -> UIImage{
 		
+	
+		
 		if (images.count-1>=index){
 			return images[index]
 		}
 		
 		let tempURL = NSURL(string: "http://" + stories[index].imageLink!)!
 		var imageData = NSData()
+		print("MADE CALL FOR IMAGE")
 		do{
 			imageData = try NSData(contentsOfURL: tempURL, options:NSDataReadingOptions.DataReadingUncached)
 		}
@@ -102,12 +105,22 @@ class listVM: NSObject{
 		
 		let tempImage =  UIImage(data: imageData)
 		images.insert(tempImage!, atIndex: index)
+		print("FINISHED CALL FOR IMAGE")
+
 		return tempImage!
 	}
 	
 	func getURLAtIndex(index: Int) ->NSURL{
 		return NSURL(string:self.getStoryAtIndex(index).link!)!
+		
 	}
+	
+	func getLinkAtIndex(index: Int) ->String{
+		return self.getStoryAtIndex(index).link!
+	}
+
+	
+	
 
 	
 	
