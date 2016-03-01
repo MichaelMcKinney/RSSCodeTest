@@ -27,14 +27,16 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		self.assignViewModel(listVM())
 		
 		var i = 0
-		while(i<viewModel?.getNumberOfStories()){
+		while(i<viewModel!.getNumberOfStories()){
 			pageViews.append(nil)
 			i++
 		}
 		
 		let pagesScrollViewSize = scrollView.frame.size
 		
-		scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * CGFloat((viewModel?.getNumberOfStories())!), pagesScrollViewSize.height)
+		scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * CGFloat((viewModel!.getNumberOfStories())), pagesScrollViewSize.height)
+		
+		loadVisiblePages()
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -80,15 +82,21 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		for var index = 0; index < firstPage; ++index {
 			purgePage(index)
 		}
+		
+		// Load pages in our range
+		for index in firstPage...lastPage {
+			loadPage(index)
+		}
+		
 		// Purge anything after the last page
-		for var index = lastPage+1; index < viewModel?.getNumberOfStories(); ++index {
+		for var index = lastPage+1; index < viewModel!.getNumberOfStories(); ++index {
 			purgePage(index)
 		}
 	}
 	
 	func loadPage(index: Int) {
-		
-		if (index < 0 || index >= viewModel?.getNumberOfStories()) {
+		let max = viewModel!.getNumberOfStories()
+		if (index < 0 || index >= max) {
 		// If it's outside the range of what you have to display, then do nothing
 			return
 		}
@@ -104,13 +112,14 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 			var frame = scrollView.bounds
 			frame.origin.x = frame.size.width * CGFloat(index)
 			frame.origin.y = 0.0
-			frame = CGRectInset(frame, 10.0, 0.0)
+			frame = CGRectInset(frame, 15.0, 0.0)
  
-			let newPageView = storyCardView()
-
-			newPageView.setMainText((viewModel?.getStoryAtIndex(index).title)!)
-			newPageView.setSubTitle((viewModel?.getStoryAtIndex(index).contentSnippet)!)
-			newPageView.setPreviewPicture((viewModel?.getImageAtIndex(index))!)
+			let newPageView = storyCardView.instanceFromNib() as! storyCardView
+			
+			
+			newPageView.setMainText(viewModel!.getStoryAtIndex(index).title!)
+			newPageView.setSubTitle(viewModel!.getStoryAtIndex(index).contentSnippet!)
+			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index))
 			
 			newPageView.contentMode = .ScaleAspectFit
 			newPageView.frame = frame
@@ -120,7 +129,7 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	}
 	
 	func purgePage(index: Int) {
-		if index < 0 || index >= viewModel?.getNumberOfStories() {
+		if index < 0 || index >= viewModel!.getNumberOfStories() {
 		// If it's outside the range of what you have to display, then do nothing
 			return
 		}

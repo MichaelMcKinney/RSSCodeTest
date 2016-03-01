@@ -21,6 +21,7 @@
 		271F80601C85FADD005E5333 /* scrollListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F805F1C85FADD005E5333 /* scrollListVC.swift */; };
 		271F80621C85FDA2005E5333 /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271F80611C85FDA2005E5333 /* cardView.xib */; };
 		271F80641C85FEC7005E5333 /* storyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80631C85FEC7005E5333 /* storyCardView.swift */; };
+		271F80661C861166005E5333 /* scrollContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F80651C861166005E5333 /* scrollContainer.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
 		2725B6E41C852699006067AB /* storyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* storyWrapper.swift */; };
 		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -68,6 +69,7 @@
 		271F805F1C85FADD005E5333 /* scrollListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollListVC.swift; sourceTree = "<group>"; };
 		271F80611C85FDA2005E5333 /* cardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cardView.xib; sourceTree = "<group>"; };
 		271F80631C85FEC7005E5333 /* storyCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyCardView.swift; sourceTree = "<group>"; };
+		271F80651C861166005E5333 /* scrollContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollContainer.swift; sourceTree = "<group>"; };
 		2725B6E11C84CFC5006067AB /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
 		2725B6E31C852699006067AB /* storyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyWrapper.swift; sourceTree = "<group>"; };
 		2725B6E51C853F31006067AB /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Pods/../build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
@@ -181,10 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				2714439C1C849E800040AC42 /* listVC.swift */,
+				271F805F1C85FADD005E5333 /* scrollListVC.swift */,
 				273E95091C84A1D70087F448 /* listVM.swift */,
 				273E950B1C84A3230087F448 /* storyCell.swift */,
 				271F80631C85FEC7005E5333 /* storyCardView.swift */,
-				271F805F1C85FADD005E5333 /* scrollListVC.swift */,
+				271F80651C861166005E5333 /* scrollContainer.swift */,
 			);
 			name = listVC;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2714439D1C849E800040AC42 /* listVC.swift in Sources */,
+				271F80661C861166005E5333 /* scrollContainer.swift in Sources */,
 				273E950E1C84AB830087F448 /* storyParser.swift in Sources */,
 				271F80581C85D7FD005E5333 /* storyVC.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,

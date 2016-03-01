@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Toc-5H-ZIS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="s5K-vX-slO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -100,10 +100,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H71-fQ-RTp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H71-fQ-RTp" customClass="scrollContainer" customModule="CodeTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-m0-ew3">
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-m0-ew3">
                                         <rect key="frame" x="26" y="162" width="323" height="323"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sUT-m0-ew3" secondAttribute="height" multiplier="1:1" id="UqA-Tn-AmJ"/>
@@ -119,7 +119,7 @@
                                             <constraint firstAttribute="width" constant="40" id="Vje-QW-kTj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZT-wr-EhV">
@@ -141,6 +141,9 @@
                                     <constraint firstItem="sUT-m0-ew3" firstAttribute="leading" secondItem="H71-fQ-RTp" secondAttribute="leading" constant="26" id="pLC-Bw-76p"/>
                                     <constraint firstAttribute="bottom" secondItem="rIw-ej-BAB" secondAttribute="bottom" constant="34" id="zWW-AM-MfK"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="scrollView" destination="sUT-m0-ew3" id="3yv-Od-Ln3"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,11 +159,12 @@
                         <outlet property="indexLabel" destination="rIw-ej-BAB" id="rv5-HU-Kvl"/>
                         <outlet property="refreshButton" destination="lZT-wr-EhV" id="29s-Pv-tLb"/>
                         <outlet property="scrollView" destination="sUT-m0-ew3" id="ZMP-GO-YXZ"/>
+                        <segue destination="daB-bt-4JU" kind="modal" identifier="showStory" modalTransitionStyle="coverVertical" id="53Z-ZN-hpa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXx-d6-jTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666.5" y="753.5"/>
+            <point key="canvasLocation" x="361.5" y="585.5"/>
         </scene>
         <!--ListVC-->
         <scene sceneID="293-dJ-Ba0">
@@ -188,13 +192,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nca-V1-bM9">
                                                     <rect key="frame" x="128" y="8" width="80" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sub Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R22-B1-vTl">
                                                     <rect key="frame" x="128" y="68" width="173" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCg-6j-9ir">
@@ -228,10 +232,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtX-3P-EMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361.86666666666667" y="-161.40666666666667"/>
+            <point key="canvasLocation" x="151.5" y="-179.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="refresh_icon.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="53Z-ZN-hpa"/>
+    </inferredMetricsTieBreakers>
 </document>
