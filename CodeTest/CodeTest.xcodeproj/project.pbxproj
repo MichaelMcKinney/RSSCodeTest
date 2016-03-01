@@ -15,7 +15,10 @@
 		271443B01C849E800040AC42 /* CodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443AF1C849E800040AC42 /* CodeTestTests.swift */; };
 		271443BB1C849E800040AC42 /* CodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443BA1C849E800040AC42 /* CodeTestUITests.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
-		2725B6E41C852699006067AB /* jsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* jsonReader.swift */; };
+		2725B6E41C852699006067AB /* storyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* storyWrapper.swift */; };
+		2725B6E81C853F31006067AB /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E51C853F31006067AB /* Argo.framework */; };
+		2725B6E91C853F31006067AB /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E61C853F31006067AB /* Curry.framework */; };
+		2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725B6E71C853F31006067AB /* SnapKit.framework */; };
 		273E950A1C84A1D70087F448 /* listVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E95091C84A1D70087F448 /* listVM.swift */; };
 		273E950C1C84A3230087F448 /* storyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950B1C84A3230087F448 /* storyCell.swift */; };
 		273E950E1C84AB830087F448 /* storyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950D1C84AB830087F448 /* storyParser.swift */; };
@@ -54,7 +57,10 @@
 		271443BA1C849E800040AC42 /* CodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestUITests.swift; sourceTree = "<group>"; };
 		271443BC1C849E800040AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725B6E11C84CFC5006067AB /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
-		2725B6E31C852699006067AB /* jsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonReader.swift; sourceTree = "<group>"; };
+		2725B6E31C852699006067AB /* storyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyWrapper.swift; sourceTree = "<group>"; };
+		2725B6E51C853F31006067AB /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Pods/../build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
+		2725B6E61C853F31006067AB /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Pods/../build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
+		2725B6E71C853F31006067AB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
 		273E95091C84A1D70087F448 /* listVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listVM.swift; sourceTree = "<group>"; };
 		273E950B1C84A3230087F448 /* storyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyCell.swift; sourceTree = "<group>"; };
 		273E950D1C84AB830087F448 /* storyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyParser.swift; sourceTree = "<group>"; };
@@ -68,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2725B6E81C853F31006067AB /* Argo.framework in Frameworks */,
+				2725B6E91C853F31006067AB /* Curry.framework in Frameworks */,
+				2725B6EA1C853F31006067AB /* SnapKit.framework in Frameworks */,
 				A37DE6C1DF1EAE836CB7FF5D /* Pods_CodeTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +125,7 @@
 			children = (
 				2714439A1C849E800040AC42 /* AppDelegate.swift */,
 				273E950D1C84AB830087F448 /* storyParser.swift */,
-				2725B6E31C852699006067AB /* jsonReader.swift */,
+				2725B6E31C852699006067AB /* storyWrapper.swift */,
 				2725B6E11C84CFC5006067AB /* story.swift */,
 				273E95081C84A1B70087F448 /* listVC */,
 				2714439E1C849E800040AC42 /* Main.storyboard */,
@@ -167,6 +176,9 @@
 		A3ECED2F69466F8B55213AFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2725B6E51C853F31006067AB /* Argo.framework */,
+				2725B6E61C853F31006067AB /* Curry.framework */,
+				2725B6E71C853F31006067AB /* SnapKit.framework */,
 				93B36875C2A19A455B5F9913 /* Pods_CodeTest.framework */,
 			);
 			name = Frameworks;
@@ -358,7 +370,7 @@
 				273E950E1C84AB830087F448 /* storyParser.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,
 				2725B6E21C84CFC5006067AB /* story.swift in Sources */,
-				2725B6E41C852699006067AB /* jsonReader.swift in Sources */,
+				2725B6E41C852699006067AB /* storyWrapper.swift in Sources */,
 				2714439B1C849E800040AC42 /* AppDelegate.swift in Sources */,
 				273E950C1C84A3230087F448 /* storyCell.swift in Sources */,
 			);
@@ -501,6 +513,10 @@
 			baseConfigurationReference = A5FFE739913FA729EB4B64D5 /* Pods-CodeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CodeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentricConsulting.CodeTest;
@@ -513,6 +529,10 @@
 			baseConfigurationReference = AF48417EC5D508BB3B75518F /* Pods-CodeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CodeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentricConsulting.CodeTest;

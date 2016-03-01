@@ -7,28 +7,27 @@
 //
 
 import Foundation
+import Curry
+import Argo
 
-class story: NSObject{
+struct story{
 	
-	var title = ""
-	var link = ""
-	var guid = ""
-	var category = ""
-	var pubDate = ""
-	var shortStory = ""
-	var imageLink = ""
+	var title: String
+	var link: String
+	var publishedDate: String
+	var contentSnippet: String
+	var content: String
+	var imageLink: String
 	
-	override init(){
-		
+}
+
+extension story: Decodable {
+	static func decode(j: JSON) -> Decoded<story> {
+		return curry(story.init)
+			<^> j <| "title"
+			<*> j <| "link"
+			<*> j <| "publishedDate"
+			<*> j <| "contentSnippet"
+			<*> j <| "content"
 	}
-	
-	static func nullStory() -> story{
-		let emptyStory = story()
-		emptyStory.title = "Something Went Wrong..."
-		emptyStory.shortStory = "Story could not be loaded"
-		return emptyStory
-	}
-	
-	
-	
 }
