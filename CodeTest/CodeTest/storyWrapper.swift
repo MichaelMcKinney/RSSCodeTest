@@ -19,7 +19,7 @@ class storyWrapper: NSObject, Mappable{
 
 	// Mappable
 	func mapping(map: Map) {
-		responseData    <- map["responseDate"]
+		responseData    <- map["responseData"]
 	}
 }
 

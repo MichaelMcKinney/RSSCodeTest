@@ -34,7 +34,9 @@ class listVM: NSObject{
 		let JSONString = self.getURLContents()
 		
 		let SW = Mapper<storyWrapper>().map(JSONString)
-		self.stories = (SW?.responseData?.feed?.entries)!
+		
+		print("did get JSON... maybe")
+		//self.stories = (SW?.responseData?.feed?.entries)!
 	}
 	
 	private func getURLContents() -> String{
