@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "getImageAtIndex(_:)"
+            landmarkName = "getImageAtIndex(_:indicatorStart:indicatorStop:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
