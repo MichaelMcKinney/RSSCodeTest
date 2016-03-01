@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JSONModel.xcscheme</key>
+		<key>Argo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Curry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-CodeTest.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SWXMLHash.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BF8569A1D17D47E1A86EB020383E8D1</key>
+		<key>1D19417F2EDCDC50D3A6324E6800F895</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E02756F714A8851671A0840C643DCC7</key>
+		<key>28E618D9359494C1A68D1922E59D48BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75743D9DB53D63102CE282AC5C4A3CE3</key>
+		<key>5D2CA4FA10B4B3D9CB5716ED97968717</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B85087F1DE65B55E5EF6C247CE69B0EE</key>
+		<key>F2977A219FFD7D7EC1D86AB118812B84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
