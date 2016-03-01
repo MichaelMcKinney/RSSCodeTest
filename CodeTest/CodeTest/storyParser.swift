@@ -55,7 +55,15 @@ class storyParser:  NSObject{
 		}
 		else{
 			let buildStory = story()
-			//buildStory.title = elem.children[0].element?.name!
+			
+			//Assign Title
+			buildStory.title = elem.children[0].element!.text!
+			
+			//Assign shortStory
+			
+			
+			//Assign Story Link
+			buildStory.link = elem.children[1].element!.text!
 			
 			//Assign Image Link
 			let imageString = elem.children[5].element!.text!
@@ -65,7 +73,8 @@ class storyParser:  NSObject{
 			//let imageEndIndex: Int = imageString.startIndex.distanceTo(range2.startIndex)
 			let trueImageString = imageString[range.endIndex.advancedBy(2)...range2.startIndex.predecessor()] //imageString.substringWithRange(NSRange(location: imageStartIndex, length: length))
 			buildStory.imageLink = trueImageString
-			//PHEW
+			
+			
 			
 			
 			return buildStory
