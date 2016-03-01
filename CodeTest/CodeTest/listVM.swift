@@ -13,11 +13,11 @@ import Foundation
 
 class listVM: NSObject{
 	
-	let xmlParser = storyParser()
+	let jsonMaker = jsonReader()
 	
 	override init() {
 		print("Did call listVM setup")
-		xmlParser.setupXML()
+		
 		print("Did init listVM")
 	}
 	

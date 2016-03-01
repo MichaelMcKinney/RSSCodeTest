@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CodeTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>330E40A27F9CB403E4EC1E46465895E0</key>
+		<key>0BF8569A1D17D47E1A86EB020383E8D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56628F47596FF67DA393E5040B9B2B7D</key>
+		<key>5E02756F714A8851671A0840C643DCC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B46C78DFBD0D8116B58E9D64CBEC78A</key>
+		<key>75743D9DB53D63102CE282AC5C4A3CE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B85087F1DE65B55E5EF6C247CE69B0EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,12 +1,15 @@
 PODS:
+  - JSONModel (1.2.0)
   - SnapKit (0.16.0)
   - SWXMLHash (2.1.0)
 
 DEPENDENCIES:
+  - JSONModel (~> 1.2.0)
   - SnapKit (~> 0.16.0)
   - SWXMLHash (~> 2.1.0)
 
 SPEC CHECKSUMS:
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   SnapKit: ddac6b339d571f9d80dbb733585b172ee9eed3cb
   SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 

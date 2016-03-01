@@ -15,6 +15,7 @@
 		271443B01C849E800040AC42 /* CodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443AF1C849E800040AC42 /* CodeTestTests.swift */; };
 		271443BB1C849E800040AC42 /* CodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271443BA1C849E800040AC42 /* CodeTestUITests.swift */; };
 		2725B6E21C84CFC5006067AB /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E11C84CFC5006067AB /* story.swift */; };
+		2725B6E41C852699006067AB /* jsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725B6E31C852699006067AB /* jsonReader.swift */; };
 		273E950A1C84A1D70087F448 /* listVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E95091C84A1D70087F448 /* listVM.swift */; };
 		273E950C1C84A3230087F448 /* storyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950B1C84A3230087F448 /* storyCell.swift */; };
 		273E950E1C84AB830087F448 /* storyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950D1C84AB830087F448 /* storyParser.swift */; };
@@ -53,6 +54,7 @@
 		271443BA1C849E800040AC42 /* CodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestUITests.swift; sourceTree = "<group>"; };
 		271443BC1C849E800040AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725B6E11C84CFC5006067AB /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
+		2725B6E31C852699006067AB /* jsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonReader.swift; sourceTree = "<group>"; };
 		273E95091C84A1D70087F448 /* listVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listVM.swift; sourceTree = "<group>"; };
 		273E950B1C84A3230087F448 /* storyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyCell.swift; sourceTree = "<group>"; };
 		273E950D1C84AB830087F448 /* storyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyParser.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				2714439A1C849E800040AC42 /* AppDelegate.swift */,
 				273E950D1C84AB830087F448 /* storyParser.swift */,
+				2725B6E31C852699006067AB /* jsonReader.swift */,
 				2725B6E11C84CFC5006067AB /* story.swift */,
 				273E95081C84A1B70087F448 /* listVC */,
 				2714439E1C849E800040AC42 /* Main.storyboard */,
@@ -355,6 +358,7 @@
 				273E950E1C84AB830087F448 /* storyParser.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,
 				2725B6E21C84CFC5006067AB /* story.swift in Sources */,
+				2725B6E41C852699006067AB /* jsonReader.swift in Sources */,
 				2714439B1C849E800040AC42 /* AppDelegate.swift in Sources */,
 				273E950C1C84A3230087F448 /* storyCell.swift in Sources */,
 			);
