@@ -8,6 +8,8 @@ The project is an iOS app written for iPhone in Swift 2.0. It requires iOS 9.2 t
 I learned some of Swift's syntax a few days prior to starting work on RSSCodeTest, so this could be considered my first Swift project.
 <br />
 
++ [See Screenshots](https://github.com/MichaelMcKinney/RSSCodeTest/blob/master/README.md#check-out-these-great-screenshots)
+
 ####Libraries and Tools Used
 To make the implentation easier I bring in several external libraries through [CocoaPods](https://cocoapods.org/). 
 These are [SnapKit](https://github.com/SnapKit/SnapKit), and [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper). SnapKit is never used, but I like to keep it around in case any UI elements need quick tweaking.
