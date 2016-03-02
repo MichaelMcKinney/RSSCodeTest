@@ -29,7 +29,7 @@
 		272C2B671C8644F200F2898F /* Very-Basic-Info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 272C2B661C8644F200F2898F /* Very-Basic-Info-icon.png */; };
 		273E950A1C84A1D70087F448 /* listVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E95091C84A1D70087F448 /* listVM.swift */; };
 		273E950C1C84A3230087F448 /* storyCell(OLD UI).swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950B1C84A3230087F448 /* storyCell(OLD UI).swift */; };
-		273E950E1C84AB830087F448 /* storyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950D1C84AB830087F448 /* storyParser.swift */; };
+		273E950E1C84AB830087F448 /* storyParser(UNUSED XML PARSER).swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E950D1C84AB830087F448 /* storyParser(UNUSED XML PARSER).swift */; };
 		A37DE6C1DF1EAE836CB7FF5D /* Pods_CodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B36875C2A19A455B5F9913 /* Pods_CodeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +81,7 @@
 		272C2B661C8644F200F2898F /* Very-Basic-Info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Very-Basic-Info-icon.png"; path = "images/Very-Basic-Info-icon.png"; sourceTree = SOURCE_ROOT; };
 		273E95091C84A1D70087F448 /* listVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listVM.swift; sourceTree = "<group>"; };
 		273E950B1C84A3230087F448 /* storyCell(OLD UI).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "storyCell(OLD UI).swift"; sourceTree = "<group>"; };
-		273E950D1C84AB830087F448 /* storyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storyParser.swift; sourceTree = "<group>"; };
+		273E950D1C84AB830087F448 /* storyParser(UNUSED XML PARSER).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "storyParser(UNUSED XML PARSER).swift"; sourceTree = "<group>"; };
 		93B36875C2A19A455B5F9913 /* Pods_CodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FFE739913FA729EB4B64D5 /* Pods-CodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeTest/Pods-CodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		AF48417EC5D508BB3B75518F /* Pods-CodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeTest/Pods-CodeTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,18 +140,13 @@
 			isa = PBXGroup;
 			children = (
 				2714439A1C849E800040AC42 /* AppDelegate.swift */,
-				273E950D1C84AB830087F448 /* storyParser.swift */,
-				2725B6E31C852699006067AB /* storyWrapper.swift */,
-				2725B6E11C84CFC5006067AB /* story.swift */,
-				271F805B1C85E81B005E5333 /* Reachability.swift */,
+				272C2B6A1C871E4A00F2898F /* Model */,
 				271F80561C85D7ED005E5333 /* storyVC */,
 				273E95081C84A1B70087F448 /* listVC */,
-				2714439E1C849E800040AC42 /* Main.storyboard */,
-				272C2B661C8644F200F2898F /* Very-Basic-Info-icon.png */,
-				271F80611C85FDA2005E5333 /* cardView.xib */,
-				271F805D1C85F9BC005E5333 /* refresh_icon.png */,
+				272C2B691C871E3600F2898F /* Layouts */,
+				272C2B681C871E2800F2898F /* Image Assets */,
+				272C2B631C86246B00F2898F /* OLD (unused) FILES */,
 				271443A11C849E800040AC42 /* Assets.xcassets */,
-				271443A31C849E800040AC42 /* LaunchScreen.storyboard */,
 				271443A61C849E800040AC42 /* Info.plist */,
 			);
 			path = CodeTest;
@@ -184,13 +179,44 @@
 			name = storyVC;
 			sourceTree = "<group>";
 		};
-		272C2B631C86246B00F2898F /* OLD UI */ = {
+		272C2B631C86246B00F2898F /* OLD (unused) FILES */ = {
 			isa = PBXGroup;
 			children = (
+				273E950D1C84AB830087F448 /* storyParser(UNUSED XML PARSER).swift */,
 				273E950B1C84A3230087F448 /* storyCell(OLD UI).swift */,
 				2714439C1C849E800040AC42 /* listVC(OLD UI).swift */,
 			);
-			name = "OLD UI";
+			name = "OLD (unused) FILES";
+			sourceTree = "<group>";
+		};
+		272C2B681C871E2800F2898F /* Image Assets */ = {
+			isa = PBXGroup;
+			children = (
+				272C2B641C86353C00F2898F /* Gradient.png */,
+				272C2B661C8644F200F2898F /* Very-Basic-Info-icon.png */,
+				271F805D1C85F9BC005E5333 /* refresh_icon.png */,
+			);
+			name = "Image Assets";
+			sourceTree = "<group>";
+		};
+		272C2B691C871E3600F2898F /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				2714439E1C849E800040AC42 /* Main.storyboard */,
+				271F80611C85FDA2005E5333 /* cardView.xib */,
+				271443A31C849E800040AC42 /* LaunchScreen.storyboard */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		272C2B6A1C871E4A00F2898F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				271F805B1C85E81B005E5333 /* Reachability.swift */,
+				2725B6E31C852699006067AB /* storyWrapper.swift */,
+				2725B6E11C84CFC5006067AB /* story.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		273E95081C84A1B70087F448 /* listVC */ = {
@@ -199,9 +225,7 @@
 				271F805F1C85FADD005E5333 /* scrollListVC.swift */,
 				273E95091C84A1D70087F448 /* listVM.swift */,
 				271F80631C85FEC7005E5333 /* storyCardView.swift */,
-				272C2B641C86353C00F2898F /* Gradient.png */,
 				271F80651C861166005E5333 /* scrollContainer.swift */,
-				272C2B631C86246B00F2898F /* OLD UI */,
 			);
 			name = listVC;
 			sourceTree = "<group>";
@@ -297,6 +321,7 @@
 				TargetAttributes = {
 					271443961C849E800040AC42 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = FX46JB7V65;
 					};
 					271443AA1C849E800040AC42 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -414,7 +439,7 @@
 			files = (
 				2714439D1C849E800040AC42 /* listVC(OLD UI).swift in Sources */,
 				271F80661C861166005E5333 /* scrollContainer.swift in Sources */,
-				273E950E1C84AB830087F448 /* storyParser.swift in Sources */,
+				273E950E1C84AB830087F448 /* storyParser(UNUSED XML PARSER).swift in Sources */,
 				271F80581C85D7FD005E5333 /* storyVC.swift in Sources */,
 				273E950A1C84A1D70087F448 /* listVM.swift in Sources */,
 				2725B6E21C84CFC5006067AB /* story.swift in Sources */,
@@ -565,6 +590,8 @@
 			baseConfigurationReference = A5FFE739913FA729EB4B64D5 /* Pods-CodeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -573,6 +600,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentricConsulting.CodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -581,6 +609,8 @@
 			baseConfigurationReference = AF48417EC5D508BB3B75518F /* Pods-CodeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -589,6 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentricConsulting.CodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

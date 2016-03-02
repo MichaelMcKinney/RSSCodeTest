@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
+//IMPLEMENTATION INSPIRED BY RAY WENDERLICH TUTORIAL: http://www.raywenderlich.com/76436/use-uiscrollview-scroll-zoom-content-swift
+
 class scrollListVC: UIViewController, UIScrollViewDelegate{
 	
 	@IBOutlet var scrollView: UIScrollView!
-	@IBOutlet var refreshButton: UIButton!
+	//@IBOutlet var refreshButton: UIButton!
 	@IBOutlet var indexLabel: UILabel!
-	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	@IBOutlet var infoView: UIView!
 	@IBOutlet var infoButton: UIButton!
@@ -29,15 +30,17 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		infoView.hidden=true
 		self.assignViewModel(listVM())
+		
+		//prepare UI elements
+		infoView.hidden=true
 		setupTouchRecognizer()
 		setupInfoRecognizer()
-		setupRefreshButton()
 		setupInfoButton()
 		updateLabel()
-		activityIndicator.stopAnimating()
+		//setupRefreshButton()
 		
+		//prepare data for scrollView
 		var i = 0
 		while(i<viewModel!.getNumberOfStories()){
 			pageViews.append(nil)
@@ -72,9 +75,9 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 		self.viewModel = tempViewModel
 	}
 	
-	private func setupRefreshButton(){
-		refreshButton.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.TouchUpInside)
-	}
+//	private func setupRefreshButton(){
+//		refreshButton.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.TouchUpInside)
+//	}
 	
 	private func setupInfoButton(){
 		infoButton.addTarget(self, action: "toggleInfo", forControlEvents: UIControlEvents.TouchUpInside)
@@ -105,29 +108,21 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	
 //MARK: Refresh Data
 	
-	func refreshData(){
-		
-		if (Reachability.isConnectedToNetwork() == false){
-			showOfflineIndicator()
-		}
-		
-		print("DID REFRESH")
-		viewModel?.refreshData(activityIndicator.stopAnimating())
-	}
-	
-//MARK: ScrollView Pages
-	
-//	func purgeAllCells(){
-//		//self.viewDidLoad()
-//		self.view.setNeedsDisplay()
-////		var i = 0
-////		while(i<viewModel!.getNumberOfStories()){
-////			pageViews.append(nil)
-////			i++
-////		}
-////		loadView()
-////		loadVisiblePages()
+	//WORKS TO DELETE AND REFRESH DATA, BUT CELLS CURRENTLY DO NOT REDRAW
+//	func refreshData(){
+//		
+//		if (Reachability.isConnectedToNetwork() == false){
+//			showOfflineIndicator()
+//		}
+//		
+//		print("DID REFRESH")
+//		viewModel?.refreshData(activityIndicator.stopAnimating())
 //	}
+	
+	
+
+//MARK: ScrollView Pages
+
 	
 	func loadVisiblePages() {
 		
@@ -175,14 +170,13 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 			frame.origin.y = 0.0
 			frame = CGRectInset(frame, 15.0, 0.0)
  
-			activityIndicator.startAnimating()
 			let newPageView = storyCardView.instanceFromNib() as! storyCardView
 			
 			
 			newPageView.setMainText(viewModel!.getStoryAtIndex(index).title!)
 			newPageView.setSubTitle(viewModel!.getStoryAtIndex(index).contentSnippet!)
 			
-			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index, indicatorStart: activityIndicator.startAnimating(), indicatorStop: activityIndicator.stopAnimating()))
+			newPageView.setPreviewPicture(viewModel!.getImageAtIndex(index))
 			
 			newPageView.contentMode = .ScaleAspectFit
 			newPageView.frame = frame
@@ -199,7 +193,6 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 			newPageView.layer.shadowOpacity = 0.2
 
 			scrollView.addSubview(newPageView)
-			activityIndicator.stopAnimating()
 			
 			pageViews[index] = newPageView
 			print("MADE NEW CELL")
@@ -222,18 +215,14 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 //MARK: ScrollView Functionality
 	
 	func scrollViewDidScroll(scrollView: UIScrollView) {
-		activityIndicator.startAnimating()
 		loadVisiblePages()
 		updateLabel()
-		activityIndicator.stopAnimating()
 	}
 	
 	func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-		activityIndicator.stopAnimating()
 	}
 	
 	func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-		activityIndicator.startAnimating()
 	}
 	
 //MARK: Segues

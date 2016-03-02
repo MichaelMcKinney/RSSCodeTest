@@ -6,9 +6,10 @@
 //  Copyright © 2016 CentricConsulting. All rights reserved.
 //
 
+
+
 //TAKEN FROM A GREAT STACKOVERFLOW POST: http://stackoverflow.com/questions/30743408/check-for-internet-connection-in-swift-2-ios-9
-
-
+//USED TO TEST NETWORK CONNECTION
 
 import SystemConfiguration
 

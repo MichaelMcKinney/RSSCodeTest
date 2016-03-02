@@ -134,18 +134,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRz-Iu-Fvd">
-                                <rect key="frame" x="16" y="592" width="55" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="S63-ZC-mcS"/>
-                                    <constraint firstAttribute="height" constant="55" id="VXs-vc-0DB"/>
-                                </constraints>
-                                <state key="normal" image="refresh_icon.png"/>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-kq-MsN">
-                                <rect key="frame" x="169" y="41" width="37" height="37"/>
-                                <color key="color" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZg-td-9IY">
                                 <rect key="frame" x="304" y="605" width="30" height="30"/>
                                 <constraints>
@@ -194,26 +182,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="H71-fQ-RTp" secondAttribute="trailing" id="1mG-xq-UFN"/>
-                            <constraint firstItem="zdd-kq-MsN" firstAttribute="top" secondItem="k4b-R9-O8v" secondAttribute="bottom" constant="21" id="3SD-6h-K2V"/>
-                            <constraint firstItem="zdd-kq-MsN" firstAttribute="centerX" secondItem="rYj-nA-AJx" secondAttribute="centerX" id="6yJ-PV-jkN"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="leading" secondItem="rYj-nA-AJx" secondAttribute="leading" id="8wR-Tn-z2B"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="top" secondItem="k4b-R9-O8v" secondAttribute="bottom" constant="66" id="EM0-ov-brf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kZg-td-9IY" secondAttribute="trailing" constant="25" id="IWq-qL-1aA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="FRz-Iu-Fvd" secondAttribute="leading" id="JcY-UG-TzT"/>
                             <constraint firstItem="H71-fQ-RTp" firstAttribute="bottom" secondItem="3co-jZ-dqE" secondAttribute="top" constant="-142" id="NGE-yo-fyR"/>
                             <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="kZg-td-9IY" secondAttribute="bottom" constant="32" id="cx0-xJ-slU"/>
                             <constraint firstItem="2dW-Iw-EqL" firstAttribute="centerX" secondItem="rYj-nA-AJx" secondAttribute="centerX" constant="-1.5" id="fv2-de-WGD"/>
-                            <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="FRz-Iu-Fvd" secondAttribute="bottom" constant="20" id="gla-iw-zcv"/>
                             <constraint firstItem="3co-jZ-dqE" firstAttribute="top" secondItem="2dW-Iw-EqL" secondAttribute="bottom" constant="29" id="ksG-bm-tlN"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="zdd-kq-MsN" id="LXh-El-8bm"/>
                         <outlet property="indexLabel" destination="2dW-Iw-EqL" id="FTg-uC-nsS"/>
                         <outlet property="infoButton" destination="kZg-td-9IY" id="sMU-IR-J87"/>
                         <outlet property="infoView" destination="XUH-NS-t7Q" id="K1k-IP-U1U"/>
-                        <outlet property="refreshButton" destination="FRz-Iu-Fvd" id="vgE-cC-MUd"/>
                         <outlet property="scrollView" destination="sUT-m0-ew3" id="ZMP-GO-YXZ"/>
                         <segue destination="daB-bt-4JU" kind="modal" identifier="showStory" modalTransitionStyle="coverVertical" id="53Z-ZN-hpa"/>
                     </connections>
@@ -293,7 +275,6 @@
     </scenes>
     <resources>
         <image name="Very-Basic-Info-icon.png" width="256" height="256"/>
-        <image name="refresh_icon.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="53Z-ZN-hpa"/>

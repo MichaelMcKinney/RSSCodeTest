@@ -80,7 +80,7 @@ class listVM: NSObject{
 		return stories[index]
 	}
 	
-	func getImageAtIndex(index: Int,indicatorStart: Void, indicatorStop: Void) -> UIImage{
+	func getImageAtIndex(index: Int) -> UIImage{
 		
 	
 		
@@ -92,7 +92,6 @@ class listVM: NSObject{
 		var imageData = NSData()
 		
 		print("MADE CALL FOR IMAGE")
-		indicatorStart
 		
 		do{
 			imageData = try NSData(contentsOfURL: tempURL, options:NSDataReadingOptions.DataReadingUncached)
@@ -110,7 +109,6 @@ class listVM: NSObject{
 		images.insert(tempImage!, atIndex: index)
 		
 		print("FINISHED CALL FOR IMAGE")
-		indicatorStop
 		
 		return tempImage!
 	}
