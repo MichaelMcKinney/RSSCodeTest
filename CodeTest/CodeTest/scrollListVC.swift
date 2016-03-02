@@ -236,11 +236,13 @@ class scrollListVC: UIViewController, UIScrollViewDelegate{
 	}
 	
 	func setupTouchRecognizer(){
-		let singleTapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "singleTap")
-		singleTapGestureRecognizer.numberOfTapsRequired = 1;
-		singleTapGestureRecognizer.enabled = true;
-		singleTapGestureRecognizer.cancelsTouchesInView = false;
-		scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+		if (Reachability.isConnectedToNetwork()){
+			let singleTapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "singleTap")
+			singleTapGestureRecognizer.numberOfTapsRequired = 1;
+			singleTapGestureRecognizer.enabled = true;
+			singleTapGestureRecognizer.cancelsTouchesInView = false;
+			scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+		}
 	}
 	
 	func singleTap(){
